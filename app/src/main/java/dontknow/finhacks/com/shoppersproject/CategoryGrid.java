@@ -27,7 +27,8 @@ public class CategoryGrid extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        clothingButton = (ImageButton)findViewById(R.id.clothingButton);
+        setContentView(R.layout.activity_category_grid);
+        clothingButton = (ImageButton) findViewById(R.id.clothingButton);
         electronicsButton = (ImageButton)findViewById(R.id.electronicsButton2);
         gamesButton = (ImageButton)findViewById(R.id.gamesButton);
         restaurantsButton = (ImageButton)findViewById(R.id.restaurantButton);
@@ -35,43 +36,42 @@ public class CategoryGrid extends AppCompatActivity {
         CosmeticButton = (ImageButton)findViewById(R.id.cosmesticsButton);
         ImageButton[] buttons = {clothingButton ,electronicsButton, gamesButton, restaurantsButton, homeButton, CosmeticButton};
 
+        // TODO: get user pref
         selected = new boolean[6];
         for (int i =0; i<6; i++){
             selected[i] = false;
         }
 
-        setContentView(R.layout.activity_category_grid);
-
         //Edit onClick function to program logic for button being pressed
         for (int i = 0; i < 6; i++){
-            ImageButton b = buttons[i];
-            System.out.println(b);
-//            final int j = i;
-//            boolean isSelected = selected[i];
-//            if (isSelected){
-//                b.setBackgroundColor(COLOR_SELECTED);
-//            } else {
-//                b.setBackgroundColor(COLOR_UNSELECTED);
-//            }
-//            b.setOnClickListener((new View.OnClickListener()
-//            {
-//                @Override
-//                public void onClick(View v)
-//                {
-////                    Toast.makeText(getApplicationContext(), "You Clicked Clothing", Toast.LENGTH_LONG).show();
-//                    if (selected[j])
-//                    {
-//                        //Change color after pressed when not previously selected
-//                        b.setBackgroundColor(COLOR_UNSELECTED);
-//                        selected[j] = false;
-//                    }
-//                    else
-//                    {
-//                        b.setBackgroundColor(COLOR_UNSELECTED);
-//                        selected[j] = true;
-//                    }
-//                }
-//            }));
+            final ImageButton b = buttons[i];
+
+            final int j = i;
+            boolean isSelected = selected[i];
+            if (isSelected){
+                b.setBackgroundColor(COLOR_SELECTED);
+            } else {
+                b.setBackgroundColor(COLOR_UNSELECTED);
+            }
+            b.setOnClickListener((new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+//                    Toast.makeText(getApplicationContext(), "You Clicked Clothing", Toast.LENGTH_LONG).show();
+                    if (selected[j])
+                    {
+                        //Change color after pressed when not previously selected
+                        b.setBackgroundColor(COLOR_UNSELECTED);
+                        selected[j] = false;
+                    }
+                    else
+                    {
+                        b.setBackgroundColor(COLOR_SELECTED);
+                        selected[j] = true;
+                    }
+                }
+            }));
         }
 
 
