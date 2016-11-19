@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             startActivity(new Intent (MainActivity.this, CategoryGrid.class));
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent (MainActivity.this, PaymentActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
