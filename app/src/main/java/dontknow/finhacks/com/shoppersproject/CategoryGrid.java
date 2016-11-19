@@ -13,4 +13,5 @@ public class CategoryGrid extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_grid);
     }
+
 }
