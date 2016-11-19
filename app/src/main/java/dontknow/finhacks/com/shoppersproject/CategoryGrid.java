@@ -29,10 +29,10 @@ public class CategoryGrid extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_grid);
         clothingButton = (ImageButton) findViewById(R.id.clothingButton);
-        electronicsButton = (ImageButton)findViewById(R.id.electronicsButton2);
+        electronicsButton = (ImageButton)findViewById(R.id.electronicsButton);
         gamesButton = (ImageButton)findViewById(R.id.gamesButton);
         restaurantsButton = (ImageButton)findViewById(R.id.restaurantButton);
-        homeButton = (ImageButton)findViewById(R.id.imageButton6);
+        homeButton = (ImageButton)findViewById(R.id.homeButton);
         CosmeticButton = (ImageButton)findViewById(R.id.cosmesticsButton);
         ImageButton[] buttons = {clothingButton ,electronicsButton, gamesButton, restaurantsButton, homeButton, CosmeticButton};
 
