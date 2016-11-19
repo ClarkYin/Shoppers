@@ -1,4 +1,4 @@
-
+import java.io.File;
 public class Store
 {
     private int storeID;
@@ -11,7 +11,7 @@ public class Store
     //Basic constructor with NO image file
     public Store(int storeID, String storeName, String storeAddress, String productCategory, String storeLocation)
     {
-        this.storeID = storeId;
+        this.storeID = storeID;
         this.storeName = storeName;
         this.storeAddress = storeAddress;
         this.productCategory = productCategory;
@@ -21,7 +21,7 @@ public class Store
     //Construct WITH IMAGE FILE
     public Store(int storeID, String storeName, String storeAddress, File storeImage, String productCategory, String storeLocation)
     {
-        this.storeID = storeId;
+        this.storeID = storeID;
         this.storeName = storeName;
         this.storeAddress = storeAddress;
         this.storeImage = storeImage;
@@ -49,7 +49,7 @@ public class Store
         this.storeName = storeName;
     }
 
-    public string getStoreAddress()
+    public String getStoreAddress()
     {
         return storeAddress;
     }
