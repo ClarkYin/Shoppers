@@ -6,7 +6,6 @@ package dontknow.finhacks.com.shoppersproject;
 
 import java.util.ArrayList;
 
-
 public class User
 {
     public int userId;
@@ -59,14 +58,14 @@ public class User
 
     public void addPreference(String preference)
     {
-        this.preferences.add(preference);
+
     }
 
     public void removePreference(String preference)
     {
         if (this.preferences.contains(preference))
         {
-            this.preferences.remove(preference);
+
         }
 
     }
