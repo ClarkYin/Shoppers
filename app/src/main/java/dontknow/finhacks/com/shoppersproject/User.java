@@ -9,16 +9,23 @@ import java.util.ArrayList;
 
 public class User
 {
+    public int userId;
     public String fullName;
     public ArrayList<String> preferences;
     public String emailAddress;
 
 
-    public User(String fullName, String emailAddress)
+    public User(int userId, String fullName, String emailAddress)
     {
+        this.userId = userId;
         this.fullName = fullName;
         this.emailAddress = emailAddress;
         preferences = new ArrayList<>();
+    }
+
+    public int getUserId()
+    {
+        return this.userId;
     }
 
     public String getFullName()
