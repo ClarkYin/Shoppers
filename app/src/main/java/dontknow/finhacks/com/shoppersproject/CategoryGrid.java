@@ -1,5 +1,6 @@
 package dontknow.finhacks.com.shoppersproject;
 
+import android.graphics.Color;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,10 @@ public class CategoryGrid extends AppCompatActivity {
     ImageButton restaurantsButton;
     ImageButton homeButton;
 
+    //Change colors here for when button pressed
+    public final int COLOR_SELECTED = Color.RED;
+    public final int COLOR_UNSELECTED = Color.BLUE;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +31,26 @@ public class CategoryGrid extends AppCompatActivity {
         clothingButton = (ImageButton)findViewById(R.id.clothingButton);
         clothingButton.setOnClickListener((new View.OnClickListener()
         {
-
+           boolean isClothingClicked = false;
             @Override
             public void onClick(View v)
             {
                 Toast.makeText(getApplicationContext(), "You Clicked Clothing", Toast.LENGTH_LONG).show();
+                if (isClothingClicked == false)
+                {
+                    //Change color after pressed when not previously selected
+                    clothingButton.setBackgroundColor(COLOR_SELECTED);
+                    isClothingClicked = true;
+                    System.out.println("TTT");
+                }
+                else
+                {
+                    clothingButton.setBackgroundColor(COLOR_UNSELECTED);
+                    isClothingClicked = false;
+                    System.out.println("HHH");
+                }
+
+
             }
         }));
 
