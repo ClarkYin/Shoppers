@@ -13,6 +13,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +44,18 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    //PUT DATABASE STUFF HERE
+    public void test()
+    {
+        try
+        {
+            DriverManager.getConnection("jbdc:mysql://10.102.200.133" + "user=finhack&password-12345678");
+        } catch (Exception e)
+        {
+
+        }
     }
 
     @Override
@@ -84,7 +99,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             startActivity(new Intent (MainActivity.this, CategoryGrid.class));
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent (MainActivity.this, PaymentActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
