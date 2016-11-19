@@ -27,7 +27,7 @@
     <!-- Electronics -->
     <ImageButton
         app:srcCompat="@mipmap/ic_launcher"
-        android:id="@+id/electronicsButton2"
+        android:id="@+id/electronicsButton"
         android:layout_height="150dp"
         android:layout_width="150dp"
         android:layout_alignTop="@+id/clothingButton"
@@ -41,8 +41,8 @@
         android:id="@+id/gamesButton"
         android:layout_height="150dp"
         android:layout_alignTop="@+id/restaurantButton"
-        android:layout_toRightOf="@+id/imageButton6"
-        android:layout_toEndOf="@+id/imageButton6"
+        android:layout_toRightOf="@+id/homeButton"
+        android:layout_toEndOf="@+id/homeButton"
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp" />
 
@@ -63,7 +63,7 @@
         app:srcCompat="@drawable/ic_menu_camera"
         android:id="@+id/cosmesticsButton"
         android:layout_width="150dp"
-        android:layout_alignTop="@+id/imageButton6"
+        android:layout_alignTop="@+id/homeButton"
         android:layout_alignLeft="@+id/gamesButton"
         android:layout_alignStart="@+id/gamesButton" />
 
@@ -71,7 +71,7 @@
     <ImageButton
         android:layout_width="150dp"
         app:srcCompat="@android:drawable/btn_star"
-        android:id="@+id/imageButton6"
+        android:id="@+id/homeButton"
         android:layout_height="150dp"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/restaurantButton"
