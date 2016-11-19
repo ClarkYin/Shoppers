@@ -11,17 +11,26 @@ public class User
 {
     public int userId;
     public String fullName;
-    public ArrayList<String> preferences;
+    public String preferences;
     public String emailAddress;
+    public ArrayList<String> listTerms;
 
 
-    public User(int userId, String fullName, String emailAddress)
+    public User(int userId, String fullName, String preferences, String emailAddress, Object listTerms)
     {
         this.userId = userId;
         this.fullName = fullName;
         this.emailAddress = emailAddress;
-        preferences = new ArrayList<>();
+        this.preferences = preferences ;
+        fillListTerms(listTerms);
     }
+
+    public void fillListTerms(Object listTerms)
+    {
+        //TO DO: populate listTerms from database
+    }
+
+
 
     public int getUserId()
     {
