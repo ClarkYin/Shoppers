@@ -20,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 import android.support.design.widget.NavigationView;
+import android.graphics.PorterDuff;
 
 public class CategoryGrid extends AppCompatActivity {
     ImageButton clothingButton;
@@ -59,9 +60,12 @@ public class CategoryGrid extends AppCompatActivity {
             final int j = i;
             boolean isSelected = selected[i];
             if (isSelected){
-                b.setBackgroundColor(COLOR_SELECTED);
+                //b.setBackgroundColor(COLOR_SELECTED);
+                b.setColorFilter(Color.GRAY, PorterDuff.Mode.LIGHTEN);
             } else {
-                b.setBackgroundColor(COLOR_UNSELECTED);
+                //b.setBackgroundColor(COLOR_UNSELECTED);
+                b.setColorFilter(Color.argb(0, 0, 0, 0));
+
             }
             b.setOnClickListener((new View.OnClickListener()
             {
@@ -72,17 +76,22 @@ public class CategoryGrid extends AppCompatActivity {
                     if (selected[j])
                     {
                         //Change color after pressed when not previously selected
-                        b.setBackgroundColor(COLOR_UNSELECTED);
+                        //b.setBackgroundColor(COLOR_UNSELECTED);
+                        b.setColorFilter(Color.argb(0, 0, 0, 0));
+
                         selected[j] = false;
                     }
                     else
                     {
-                        b.setBackgroundColor(COLOR_SELECTED);
+                        b.setColorFilter(Color.GRAY, PorterDuff.Mode.LIGHTEN);
+                        //b.setBackgroundColor(COLOR_SELECTED);
                         selected[j] = true;
                     }
                 }
             }));
         }
 
+
     }
+
 }
