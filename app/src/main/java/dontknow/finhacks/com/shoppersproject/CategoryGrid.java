@@ -90,6 +90,7 @@ public class CategoryGrid extends AppCompatActivity {
                 }
             }));
         }
+        new Util().execute(1);
 
 
     }
