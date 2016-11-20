@@ -13,7 +13,7 @@
 
     <!-- Clothing  -->
     <ImageButton
-        app:srcCompat="@drawable/ic_menu_send"
+        app:srcCompat="@drawable/bag_shoe"
         android:layout_marginLeft="33dp"
         android:layout_marginStart="33dp"
         android:id="@+id/clothingButton"
@@ -22,11 +22,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="13dp" />
+        android:layout_marginTop="13dp"
+        android:elevation="0dp"
+        android:background="@android:color/transparent"
+        android:visibility="visible" />
 
     <!-- Electronics -->
     <ImageButton
-        app:srcCompat="@mipmap/ic_launcher"
+        app:srcCompat="@drawable/ic_food_in_blue"
         android:id="@+id/electronicsButton"
         android:layout_height="150dp"
         android:layout_width="150dp"
@@ -36,9 +39,9 @@
 
     <!--Games -->
     <ImageButton
-        android:layout_width="150dp"
-        app:srcCompat="@drawable/ic_menu_manage"
+        app:srcCompat="@drawable/ic_steam"
         android:id="@+id/gamesButton"
+        android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignTop="@+id/restaurantButton"
         android:layout_toRightOf="@+id/homeButton"
@@ -59,10 +62,10 @@
 
     <!-- Cosmetics -->
     <ImageButton
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/ic_menu_camera"
+        app:srcCompat="@drawable/ic_makeup1"
         android:id="@+id/cosmesticsButton"
         android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignTop="@+id/homeButton"
         android:layout_alignLeft="@+id/gamesButton"
         android:layout_alignStart="@+id/gamesButton" />
@@ -81,9 +84,18 @@
     <Button
         android:text="Done"
         android:id="@+id/submitCategory"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="7dp"
         android:layout_height="70dp" />
+
+    <TextView
+        android:text="Fashion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/restaurantButton"
+        android:layout_alignLeft="@+id/submitCategory"
+        android:layout_alignStart="@+id/submitCategory" />
 </RelativeLayout>
