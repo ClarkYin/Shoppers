@@ -112,6 +112,7 @@ public class CategoryGrid extends AppCompatActivity {
                 }
             }));
 
+
         }
         done.setOnClickListener(new View.OnClickListener() {
             @Override
