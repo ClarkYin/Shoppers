@@ -13,4 +13,17 @@
     tools:context="dontknow.finhacks.com.shoppersproject.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName|textCapWords"
+        android:hint="Search"
+        android:ems="10"
+        android:layout_marginTop="163dp"
+        android:id="@+id/searchBar"
+        android:imeOptions="actionNext"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>

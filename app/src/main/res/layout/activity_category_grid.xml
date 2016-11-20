@@ -29,7 +29,7 @@
 
     <!-- Electronics -->
     <ImageButton
-        app:srcCompat="@drawable/ic_food_in_blue"
+        app:srcCompat="@drawable/ic_latop"
         android:id="@+id/electronicsButton"
         android:layout_height="150dp"
         android:layout_width="150dp"
@@ -51,7 +51,7 @@
 
     <!-- Restaurants -->
     <ImageButton
-        app:srcCompat="@android:drawable/arrow_up_float"
+        app:srcCompat="@drawable/ic_food_in_blue"
         android:layout_marginTop="13dp"
         android:id="@+id/restaurantButton"
         android:layout_height="150dp"
@@ -72,10 +72,10 @@
 
     <!-- Home -->
     <ImageButton
-        android:layout_width="150dp"
-        app:srcCompat="@android:drawable/btn_star"
+        app:srcCompat="@drawable/ic_homeappliance"
         android:id="@+id/homeButton"
         android:layout_height="150dp"
+        android:layout_width="150dp"
         android:layout_marginTop="13dp"
         android:layout_below="@+id/restaurantButton"
         android:layout_alignLeft="@+id/restaurantButton"

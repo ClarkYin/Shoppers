@@ -3,6 +3,7 @@ package dontknow.finhacks.com.shoppersproject;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,12 +14,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import android.content.SharedPreferences;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    SharedPreferences prefs = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +54,24 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+   //     prefs = getSharedPreferences("com.shoppersproject.MainActivity", MODE_PRIVATE);
+
+        final ArrayList<String> inputHistory = new ArrayList<String>(); // ArrayList to save history
+        EditText userInput = (EditText) findViewById(R.id.searchBar);
+        userInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                boolean handled = false;
+                if (i == EditorInfo.IME_ACTION_NEXT){
+                    String userInputText = textView.getText().toString();
+                    inputHistory.add(userInputText);
+                    Toast.makeText(MainActivity.this, "You searched: " +
+                            userInputText, Toast.LENGTH_SHORT).show();
+                }
+                return handled;
+            }
+        });
     }
 
     //PUT DATABASE STUFF HERE
@@ -96,11 +124,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_category) {
             startActivity(new Intent (MainActivity.this, CategoryGrid.class));
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_payment) {
             startActivity(new Intent (MainActivity.this, PaymentActivity.class));
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_CardActivity) {
             startActivity(new Intent (MainActivity.this, CardActivity.class));
         } else if (id == R.id.nav_manage) {
 

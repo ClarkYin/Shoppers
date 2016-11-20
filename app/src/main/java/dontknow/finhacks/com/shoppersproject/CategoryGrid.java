@@ -17,6 +17,7 @@ import android.view.View;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 import android.support.design.widget.NavigationView;
@@ -46,6 +47,8 @@ public class CategoryGrid extends AppCompatActivity {
         homeButton = (ImageButton)findViewById(R.id.homeButton);
         CosmeticButton = (ImageButton)findViewById(R.id.cosmesticsButton);
         ImageButton[] buttons = {clothingButton ,electronicsButton, gamesButton, restaurantsButton, homeButton, CosmeticButton};
+        Button done = (Button) findViewById(R.id.submitCategory);
+        String [] category = new String [5];
 
         // TODO: get user pref
         selected = new boolean[6];
@@ -62,6 +65,25 @@ public class CategoryGrid extends AppCompatActivity {
             if (isSelected){
                 //b.setBackgroundColor(COLOR_SELECTED);
                 b.setColorFilter(Color.GRAY, PorterDuff.Mode.LIGHTEN);
+
+                if(b.equals(clothingButton)){
+                    category[0] = "clothing";
+                }
+                else if(b.equals(electronicsButton)){
+                    category[1] = "electronics";
+                }
+                else if(b.equals(gamesButton)){
+                    category[2] = "games";
+                }
+                else if(b.equals(restaurantsButton)){
+                    category[3] = "restaurants";
+                }
+                else if(b.equals(homeButton)){
+                    category[4] = "home";
+                }
+                else if(b.equals(CosmeticButton)){
+                    category[5] = "cosmetic";
+                }
             } else {
                 //b.setBackgroundColor(COLOR_UNSELECTED);
                 b.setColorFilter(Color.argb(0, 0, 0, 0));
@@ -89,8 +111,14 @@ public class CategoryGrid extends AppCompatActivity {
                     }
                 }
             }));
-        }
 
+        }
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent (CategoryGrid.this, MainActivity.class));
+            }
+        });
 
     }
 
